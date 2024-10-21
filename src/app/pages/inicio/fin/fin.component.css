@@ -1,0 +1,27 @@
+.fin-container {
+    background-color: #1c1c1c;
+    color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #ff4081; /* Color atractivo */
+    margin-bottom: 15px;
+}
+
+.finalizar-button {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.finalizar-button:hover {
+    background-color: #ff9f00; /* Efecto hover */
+}

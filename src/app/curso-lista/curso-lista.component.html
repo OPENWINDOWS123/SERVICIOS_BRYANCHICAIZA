@@ -1,0 +1,29 @@
+<h2>Lista de Cursos</h2>
+
+<div class="curso-lista">
+  <div *ngIf="cursos.length === 0">
+    <p>No hay cursos disponibles.</p>
+  </div>
+
+  <div *ngFor="let curso of cursos; let i = index" class="curso">
+    <h3>{{ curso.nombre }}</h3>
+    <h3>{{ TIT_fecha}}</h3>
+    <p>{{ curso.fecha }}</p>
+    <h3>{{ TIT_profesor}}</h3>
+    <p>{{ curso.profesor }}</p>
+    <h3>{{ TIT_duracion}}</h3>
+    <p>{{ curso.duracion }}</p>
+   
+    <button (click)="eliminarCurso(i)">Eliminar</button>
+    <button (click)="verDetalles(curso)">Ver más detalles</button>
+  </div>
+</div>
+<!-- Modal para mostrHar detalles del curso -->
+<div *ngIf="cursoSeleccionado" class="modal">
+  <div class="modal-content">
+    <span (click)="cerrarDetalles()" class="close">&times;</span>
+    <h3>DETALLES DEL CURSO:</h3>
+    <p><strong>descripcion:</strong> {{ cursoSeleccionado.descripcion }}</p>
+    <p><strong>Fecha Final:</strong> {{ calcularFechaFinal(cursoSeleccionado.fecha, cursoSeleccionado.duracion) | date }}</p>
+  </div>
+</div>

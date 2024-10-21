@@ -46,7 +46,7 @@
 
   h1 {
     font-size: 3.125rem;
-    color: var(--gray-900);
+    color: #ffffff;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
@@ -225,18 +225,26 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
+      <h1>Bienvenido a la Aplicación de Cursos</h1>
+
+      <!-- Componente para registrar un nuevo curso -->
+     <app-curso-form></app-curso-form>
+      
+      <!-- Componente para mostrar la lista de cursos -->
+      <app-curso-lista></app-curso-lista>
+      <router-outlet></router-outlet>
+
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
+
+   
+  
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
         @for (item of [
           { title: 'Explore the Docs', link: 'https://angular.dev' },
           { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
         ]; track item.title) {
           <a
             class="pill"
@@ -244,6 +252,7 @@
             target="_blank"
             rel="noopener"
           >
+          
             <span>{{ item.title }}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -258,10 +267,73 @@
             </svg>
           </a>
         }
+        <!----------INICIO-------------->
+
+     <a
+     class="pill"
+     routerLink = "/pages/inicio"                        
+     rel="noopener"
+     aria-label="Ir a la página de inicio"
+   >
+     <span>INICIO</span>
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       height="14"
+       viewBox="0 -960 960 960"
+       width="14"
+       fill="currentColor"
+     >
+       <path
+         d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+       />
+     </svg>
+   </a>
+
+ <!----------MEDIO-------------->
+ <a
+     class="pill"
+     routerLink = "/pages/inicio/medio"                        
+     rel="noopener"
+     aria-label="Ir a la página de inicio"
+   >
+     <span>MEDIO</span>
+     <svg
+       xmlns="http://www.w3.org/2000/svg"
+       height="14"
+       viewBox="0 -960 960 960"
+       width="14"
+       fill="currentColor"
+     >
+       <path
+         d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+       />
+     </svg>
+   </a>
+ <!----------FIN-------------->
+ <a
+ class="pill"
+ routerLink = "/pages/inicio/fin"                        
+ rel="noopener"
+ aria-label="Ir a la página de inicio"
+>
+ <span>FIN</span>
+ <svg
+   xmlns="http://www.w3.org/2000/svg"
+   height="14"
+   viewBox="0 -960 960 960"
+   width="14"
+   fill="currentColor"
+ >
+   <path
+     d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+   />
+ </svg>
+</a>
+ 
       </div>
       <div class="social-links">
         <a
-          href="https://github.com/angular/angular"
+          href="https://github.com/OPENWINDOWS123"
           aria-label="Github"
           target="_blank"
           rel="noopener"
@@ -280,26 +352,7 @@
           </svg>
         </a>
         <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
+          href="https://www.youtube.com/watch?v=ICuYH-RuVrU"
           aria-label="Youtube"
           target="_blank"
           rel="noopener"

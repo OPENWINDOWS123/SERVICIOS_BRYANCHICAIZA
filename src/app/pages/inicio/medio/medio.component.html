@@ -1,0 +1,9 @@
+<div class="medio-container">
+    <h2>Proceso Magnífico</h2>
+    <p>{{ steps[step - 1] }}</p>
+    <button (click)="nextStep()" *ngIf="step < steps.length">Siguiente</button>
+    <div *ngIf="step === steps.length">
+        <p>¡Felicidades! Has completado el proceso.</p>
+        <button (click)="step = 1">Reiniciar</button>
+    </div>
+</div>

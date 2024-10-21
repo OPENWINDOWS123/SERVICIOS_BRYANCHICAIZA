@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+
+ 
+  
+  /* You can add global styles to this file, and also import other style files */
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c; /* Fondo oscuro para un toque elegante */
+    color: #fff;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #ff4081, #ff9f00);
+    border-radius: 8px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff4081;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff9f00; /* Efecto hover */
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #2a2a2a;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff; /* Color de texto blanco puro */
+}
+h3 {
+    margin-top: 20px;
+    color: #ff4081; /* Color distintivo para encabezados */
+}
