@@ -13,18 +13,18 @@ import { NgIf } from '@angular/common';
 export class CursoFormComponent {
   nombre: string = '';
   descripcion: string = '';
-  profesor: string = '';   // Campo para el profesor
+
   fecha: string = '';      // Campo para la fecha
   duracion: number | null = null; // Campo para la duración en semanas
 
   constructor(private cursoService: CursoService) { }
 
   onSubmit() {
-    if (this.nombre && this.descripcion && this.profesor && this.fecha && this.duracion) {
+    if (this.nombre && this.descripcion  && this.fecha && this.duracion) {
       const nuevoCurso = {
         nombre: this.nombre,
         descripcion: this.descripcion,
-        profesor: this.profesor,
+      
         fecha: this.fecha,
         duracion: this.duracion
       };
@@ -36,7 +36,7 @@ export class CursoFormComponent {
   limpiarFormulario() {
     this.nombre = '';
     this.descripcion = '';
-    this.profesor = '';
+  
     this.fecha = '';
     this.duracion = null;
   }

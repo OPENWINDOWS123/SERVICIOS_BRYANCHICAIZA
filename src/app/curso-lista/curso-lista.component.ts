@@ -22,9 +22,15 @@ interface Curso {
 })
 export class CursoListaComponent implements OnInit {
   cursos: Curso[] = []; // Tipado mejorado
+  modoModificar: boolean = false;
   TIT_fecha: string ="FECHA INICIO:" ;  
-  TIT_profesor: string ="PROFESOR:";  
   TIT_duracion:string="DURACION (SEMANAS):";
+  TIT_CALCULADORA:string="CALCULADORA PARA TAREAS:";
+
+  a=0
+  b=0
+  c=0
+
 
   cursoSeleccionado: Curso | null = null;
   constructor(private cursoService: CursoService) {}
@@ -43,6 +49,25 @@ export class CursoListaComponent implements OnInit {
     
 
   }
+
+
+  sumar(){
+    this.c= this.a + this.b
+  }
+
+  resta(){
+    this.c= this.a - this.b
+  }
+
+  mul(){
+    this.c= this.a * this.b
+  }
+
+  div(){
+    this.c= this.a / this.b
+  }
+
+
    eliminarCurso(index: number): void {
     this.cursoService.removeCurso(index); // Llama al servicio para eliminar
     this.cargarCursos(); // Recarga la lista de cursos
@@ -53,6 +78,7 @@ export class CursoListaComponent implements OnInit {
 
   cerrarDetalles(): void {
     this.cursoSeleccionado = null; // Limpia la selección
+     // Resetear el modo
   }
   calcularFechaFinal(fecha: string, duracion: number | null): Date {
     const fechaInicio = new Date(fecha);
@@ -62,4 +88,14 @@ export class CursoListaComponent implements OnInit {
     }
     return fechaFinal;
   }
+  modificarCurso(index: number, cursoActualizado: Partial<Curso>): void {
+    if (cursoActualizado) {
+      this.cursoService.updateCurso(index, cursoActualizado as CursoService);
+      this.cargarCursos(); // Recargar la lista de cursos
+    }
+}
+prepararModificacion(curso: Curso): void {
+  this.cursoSeleccionado = { ...curso }; // Hacer una copia para evitar modificaciones directas
+}
+
 }

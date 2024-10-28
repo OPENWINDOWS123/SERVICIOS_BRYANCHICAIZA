@@ -20,4 +20,11 @@ export class CursoService {
   removeCurso(index: number) {
     this.cursos.splice(index, 1);
   }
+  updateCurso(index: number, cursoActualizado: CursoService): void {
+    if (index >= 0 && index < this.cursos.length) {
+      this.cursos[index] = { ...this.cursos[index], ...cursoActualizado }; // Mezcla los atributos
+    } else {
+      throw new Error('Índice fuera de rango'); // Manejo de errores
+    }
+  }
 }
